@@ -52,7 +52,11 @@
           <ul class="techs">
             @for (tech of group.techs; track tech.label) {
               <li>
-                <img [src]="deviconUrl + tech.icon + '.svg'" alt="" width="40" height="40" loading="lazy" />
+                @if (tech.icon) {
+                  <img [src]="deviconUrl + tech.icon + '.svg'" alt="" width="40" height="40" loading="lazy" />
+                } @else {
+                  <span class="badge" aria-hidden="true">{{ tech.badge }}</span>
+                }
                 {{ tech.label }}
               </li>
             }

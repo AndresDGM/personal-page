@@ -39,7 +39,14 @@ describe('App', () => {
 
   it('el marcador cuenta proyectos y tecnologías', () => {
     const hud = compiled.querySelector('.hud')?.textContent ?? '';
-    expect(hud).toContain('PROYECTOS 06');
-    expect(hud).toContain('TECNOLOGÍAS 18');
+    const techs = TECH_GROUPS.flatMap((g) => g.techs).length;
+    expect(hud).toContain(`PROYECTOS ${String(PROJECTS.length).padStart(2, '0')}`);
+    expect(hud).toContain(`TECNOLOGÍAS ${String(techs).padStart(2, '0')}`);
+  });
+
+  it('cada tecnología tiene logo o placa, nunca un hueco', () => {
+    for (const tech of TECH_GROUPS.flatMap((g) => g.techs)) {
+      expect(!!tech.icon !== !!tech.badge).toBe(true);
+    }
   });
 });

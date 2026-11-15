@@ -20,9 +20,17 @@ export interface Like {
   sprite: SpriteName;
 }
 
+export interface Tech {
+  label: string;
+  /** Ruta dentro de Devicon (sin la extensión .svg). */
+  icon?: string;
+  /** Texto corto para la placa pixel cuando Devicon no tiene el logo. */
+  badge?: string;
+}
+
 export interface TechGroup {
   name: string;
-  techs: { label: string; icon: string }[];
+  techs: Tech[];
 }
 
 export const LIKES: Like[] = [
@@ -32,7 +40,6 @@ export const LIKES: Like[] = [
   { title: 'Enseñar', text: 'Explicar lo que aprendo; sigo practicando.', sprite: 'cap' },
 ];
 
-/** `icon` es la ruta dentro de Devicon (sin la extensión .svg). */
 export const TECH_GROUPS: TechGroup[] = [
   {
     name: 'Frontend',
@@ -52,24 +59,52 @@ export const TECH_GROUPS: TechGroup[] = [
       { label: 'Java', icon: 'java/java-original' },
       { label: 'Spring Boot', icon: 'spring/spring-original' },
       { label: 'Python', icon: 'python/python-original' },
+      { label: 'C/C++', icon: 'cplusplus/cplusplus-original' },
     ],
   },
   {
-    name: 'Datos y mensajería',
+    name: 'Tiempo real y mensajería',
     techs: [
-      { label: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
-      { label: 'Redis', icon: 'redis/redis-original' },
+      { label: 'WebSocket', badge: 'WS' },
+      { label: 'SSE', badge: 'SSE' },
       { label: 'RabbitMQ', icon: 'rabbitmq/rabbitmq-original' },
     ],
   },
   {
-    name: 'DevOps y calidad',
+    name: 'Datos y almacenamiento',
     techs: [
+      { label: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
+      { label: 'Redis', icon: 'redis/redis-original' },
+      { label: 'AWS S3', icon: 'amazonwebservices/amazonwebservices-original-wordmark' },
+      { label: 'Supabase Storage', icon: 'supabase/supabase-original' },
+      { label: 'RustFS', badge: 'RFS' },
+    ],
+  },
+  {
+    name: 'Infraestructura y DevOps',
+    techs: [
+      { label: 'VPS', badge: 'VPS' },
+      { label: 'OCI', icon: 'oracle/oracle-original' },
+      { label: 'Railway', icon: 'railway/railway-original' },
       { label: 'Docker', icon: 'docker/docker-original' },
       { label: 'GitHub Actions', icon: 'githubactions/githubactions-original' },
       { label: 'Git', icon: 'git/git-original' },
+    ],
+  },
+  {
+    name: 'Videojuegos y hardware',
+    techs: [
+      { label: 'Godot', icon: 'godot/godot-original' },
+      { label: 'Arduino', icon: 'arduino/arduino-original' },
+      { label: 'ESP32', badge: 'ESP32' },
+    ],
+  },
+  {
+    name: 'Calidad y metodologías ágiles',
+    techs: [
       { label: 'Vitest', icon: 'vitest/vitest-original' },
       { label: 'Jest', icon: 'jest/jest-plain' },
+      { label: 'Scrum', badge: 'SCRUM' },
     ],
   },
 ];
