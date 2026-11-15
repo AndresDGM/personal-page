@@ -51,7 +51,7 @@ describe('App', () => {
 
   it('cada tecnología tiene exactamente un icono, nunca un hueco', () => {
     for (const tech of TECH_GROUPS.flatMap((g) => g.techs)) {
-      expect([tech.icon, tech.simpleIcon, tech.sprite].filter(Boolean).length).toBe(1);
+      expect([tech.icon, tech.simpleIcon, tech.logoUrl, tech.sprite].filter(Boolean).length).toBe(1);
     }
   });
 });

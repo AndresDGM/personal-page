@@ -82,6 +82,35 @@ export const SPRITES = {
   ],
   /** IoT: señal inalámbrica. */
   wifi: ['..BBBBBB..', '.B......B.', 'B..BBBB..B', '..B....B..', '....BB....', '....BB....'],
+  /** JSP: página web con plantilla (etiquetas) y la taza de Java abajo. */
+  jsp: [
+    'KKKKKKK...',
+    'KWWWWWKK..',
+    'KWWWWWKWK.',
+    'KWWWWWKKKK',
+    'KWWBWWBWWK',
+    'KWBWWWWBWK',
+    'KWWBWWBWWK',
+    'KWWWOOWWWK',
+    'KWWWWWWWWK',
+    'KKKKKKKKKK',
+  ],
+  /** JPA: un objeto Java enlazado a una tabla de la base de datos. */
+  jpa: ['KKKK..KKKK', 'KOOK..KLLK', 'KWWKBBKBBK', 'KWWK..KLLK', 'KKKK..KBBK', '......KKKK'],
+  /** Java Swing: ventana de escritorio con campo de texto y botón. */
+  swing: [
+    'KKKKKKKKKK',
+    'KDDDDDDDRK',
+    'KKKKKKKKKK',
+    'KWWWWWWWWK',
+    'KWLLLLLLWK',
+    'KWWWWWWWWK',
+    'KWWWWBBBWK',
+    'KWWWWWWWWK',
+    'KKKKKKKKKK',
+  ],
+  /** Sockets: TCP como conexión continua y UDP como datagramas sueltos. */
+  sockets: ['KKK....KKK', 'KLKBBBBKLK', 'KKK....KKK', '..........', 'KKK....KKK', 'KLKB.B.KLK', 'KKK....KKK'],
   trophy: [
     '..KKKKKKKK..',
     'KKKYWYYYOKKK',
