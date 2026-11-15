@@ -1,0 +1,110 @@
+:host {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.note {
+  color: var(--slate-pencil);
+}
+
+.files {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    gap: 6px;
+  }
+}
+
+.preview {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  margin-bottom: 6px;
+  /* tono medio liso: contrasta tanto con logos blancos como con negros */
+  background: #8fa3c0;
+
+  img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+  }
+}
+
+.name {
+  font: 400 22px/1.1 var(--font-display);
+  word-break: break-all;
+}
+
+.meta {
+  color: var(--slate-pencil);
+  font-size: 13px;
+}
+
+.open {
+  justify-self: start;
+  color: var(--blue-deep);
+  font: 500 14px var(--font-body);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ejemplos de código */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+
+  button {
+    padding: 6px 14px;
+    border: 0;
+    background: var(--cloud-mist);
+    color: var(--deep-navy);
+    font: 400 22px/1 var(--font-display);
+    cursor: pointer;
+
+    &[aria-selected='true'] {
+      background: var(--signal-blue);
+      color: #fff;
+      box-shadow: 4px 4px 0 0 var(--deep-navy);
+    }
+  }
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--deep-navy);
+  color: #8fb4ff;
+  font: 500 12px var(--font-body);
+}
+
+.copy {
+  padding: 4px 10px;
+  border: 0;
+  background: var(--signal-blue);
+  color: #fff;
+  font: 500 12px var(--font-body);
+  cursor: pointer;
+}
+
+pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: #0a1435;
+  color: #dbe6ff;
+  font: 13px/1.55 ui-monospace, 'JetBrains Mono', 'Fira Code', monospace;
+}

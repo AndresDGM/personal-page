@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 import { PROJECTS, TECH_GROUPS } from './portfolio.data';
@@ -8,7 +10,10 @@ describe('App', () => {
   beforeEach(async () => {
     // jsdom no implementa canvas; los sprites simplemente no se dibujan en los tests
     vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
-    await TestBed.configureTestingModule({ imports: [App] }).compileComponents();
+    await TestBed.configureTestingModule({
+      imports: [App],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }).compileComponents();
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     compiled = fixture.nativeElement as HTMLElement;

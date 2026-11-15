@@ -5,6 +5,7 @@
       <a href="#proyectos">Proyectos</a>
       <a href="#perfil">Perfil</a>
       <a href="#tecnologias">Tecnologías</a>
+      <a href="#demo-s3">Demo S3</a>
       <a href="https://github.com/AndresDGM">GitHub</a>
     </div>
   </nav>
@@ -76,6 +77,15 @@
         <app-project-card [project]="project" />
       }
     </div>
+  </section>
+
+  <section class="sec" id="demo-s3" aria-labelledby="t-s3">
+    <h2 id="t-s3">Demo S3</h2>
+    <p class="lead">
+      Archivos servidos en vivo desde mi bucket público <b>demo</b> en RustFS, compatible con S3. La
+      lista se pide al cargar la página con ListObjectsV2.
+    </p>
+    <app-s3-demo />
   </section>
 </div>
 
