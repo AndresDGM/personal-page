@@ -1,0 +1,60 @@
+@let s = state();
+@switch (s.status) {
+  @case ('loading') {
+    <p class="note" aria-live="polite">Pidiendo la lista al bucket…</p>
+  }
+  @case ('error') {
+    <p class="note" role="alert">
+      No se pudo leer el bucket ahora mismo. Puedes abrirlo directamente en
+      <a [href]="bucketUrl + '?list-type=2'" target="_blank" rel="noopener">{{ bucketUrl }}</a>.
+    </p>
+  }
+  @case ('ok') {
+    @if (s.items.length === 0) {
+      <p class="note">El bucket está vacío por ahora.</p>
+    } @else {
+      <ul class="files">
+        @for (file of s.items; track file.key) {
+          <li class="panel">
+            <a class="preview" [href]="file.url" target="_blank" rel="noopener">
+              @if (isImage(file.key)) {
+                <img [src]="file.url" [alt]="file.key" loading="lazy" />
+              } @else {
+                <app-pixel-sprite name="bucket" [scale]="6" />
+              }
+            </a>
+            <b class="name">{{ file.key }}</b>
+            <span class="meta">{{ kb(file.size) }} · {{ file.lastModified | date: 'yyyy-MM-dd' }}</span>
+            <a class="open" [href]="file.url" target="_blank" rel="noopener">Abrir →</a>
+          </li>
+        }
+      </ul>
+    }
+  }
+}
+
+<div class="code panel">
+  <div class="tabs" role="tablist" aria-label="Ejemplos de código">
+    @for (sn of snippets; track sn.id) {
+      <button
+        role="tab"
+        type="button"
+        [id]="'tab-' + sn.id"
+        [attr.aria-selected]="tab() === sn.id"
+        [attr.aria-controls]="'panel-' + sn.id"
+        (click)="tab.set(sn.id)"
+      >
+        {{ sn.label }}
+      </button>
+    }
+  </div>
+  <div role="tabpanel" [id]="'panel-' + snippet().id" [attr.aria-labelledby]="'tab-' + snippet().id">
+    <div class="bar">
+      <span>{{ snippet().file }}</span>
+      <button type="button" class="copy" (click)="copy()">
+        {{ copied() ? '¡Copiado!' : 'Copiar' }}
+      </button>
+    </div>
+    <pre><code>{{ snippet().code }}</code></pre>
+  </div>
+</div>

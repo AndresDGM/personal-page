@@ -59,6 +59,17 @@ nav {
   padding: 16px 0;
   font: 500 14px var(--font-body);
 
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+
+    img {
+      image-rendering: pixelated;
+    }
+  }
+
   b {
     font-weight: 700;
     font-size: 18px;
@@ -371,6 +382,60 @@ footer {
   background: var(--deep-navy);
   color: #dbe6ff;
   font-size: 14px;
+
+  .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    b {
+      margin-right: 4px;
+      color: #fff;
+      font: 400 26px/1 var(--font-display);
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 3px 3px 0 0 var(--signal-blue);
+
+      &:hover {
+        filter: brightness(1.25);
+      }
+    }
+
+    .mail {
+      --brand: var(--signal-blue);
+      box-shadow: 3px 3px 0 0 #8fb4ff;
+    }
+
+    .linkedin {
+      --brand: #0a66c2;
+    }
+
+    .github {
+      --brand: #181717;
+    }
+
+    .bitbucket {
+      --brand: #0052cc;
+    }
+  }
 
   &::before {
     content: '';

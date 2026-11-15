@@ -20,13 +20,15 @@ export interface Like {
   sprite: SpriteName;
 }
 
-/** Cada tecnología lleva exactamente una de las tres fuentes de icono. */
+/** Cada tecnología lleva exactamente una fuente de icono. */
 export interface Tech {
   label: string;
   /** Ruta dentro de Devicon (sin la extensión .svg). */
   icon?: string;
   /** Slug de Simple Icons, para logos que Devicon no tiene. */
   simpleIcon?: string;
+  /** URL directa del logo oficial cuando no está en ningún catálogo. */
+  logoUrl?: string;
   /** Icono pixel propio cuando la tecnología no tiene logo oficial. */
   sprite?: SpriteName;
 }
@@ -64,10 +66,19 @@ export const TECH_GROUPS: TechGroup[] = [
     techs: [
       { label: 'Node.js', icon: 'nodejs/nodejs-original' },
       { label: 'Express', icon: 'express/express-original' },
-      { label: 'Java', icon: 'java/java-original' },
-      { label: 'Spring Boot', icon: 'spring/spring-original' },
       { label: 'Python', icon: 'python/python-original' },
       { label: 'C/C++', icon: 'cplusplus/cplusplus-original' },
+    ],
+  },
+  {
+    name: 'Java',
+    techs: [
+      { label: 'Java', icon: 'java/java-original' },
+      { label: 'Spring Boot', icon: 'spring/spring-original' },
+      { label: 'JPA', sprite: 'jpa' },
+      { label: 'JSP', sprite: 'jsp' },
+      { label: 'PrimeFaces', simpleIcon: 'primefaces' },
+      { label: 'Java Swing', sprite: 'swing' },
     ],
   },
   {
@@ -76,6 +87,7 @@ export const TECH_GROUPS: TechGroup[] = [
       { label: 'WebSocket', sprite: 'websocket' },
       { label: 'SSE', sprite: 'sse' },
       { label: 'MQTT', simpleIcon: 'mqtt' },
+      { label: 'Sockets TCP/UDP', sprite: 'sockets' },
       { label: 'RabbitMQ', icon: 'rabbitmq/rabbitmq-original' },
     ],
   },
@@ -93,29 +105,52 @@ export const TECH_GROUPS: TechGroup[] = [
     name: 'Infraestructura y DevOps',
     techs: [
       { label: 'VPS', sprite: 'server' },
+      { label: 'SSH', icon: 'ssh/ssh-original' },
       { label: 'OCI', icon: 'oracle/oracle-original' },
+      { label: 'Amazon EC2', simpleIcon: 'amazonec2' },
       { label: 'Railway', icon: 'railway/railway-original' },
       { label: 'Docker', icon: 'docker/docker-original' },
+      {
+        label: 'Dokploy',
+        logoUrl: 'https://cdn.jsdelivr.net/gh/Dokploy/dokploy@v0.31.2/apps/dokploy/public/icon-light.svg',
+      },
       { label: 'GitHub Actions', icon: 'githubactions/githubactions-original' },
-      { label: 'Git', icon: 'git/git-original' },
     ],
   },
   {
-    name: 'IoT, hardware y videojuegos',
+    name: 'IoT y hardware',
     techs: [
       { label: 'IoT', sprite: 'wifi' },
       { label: 'Arduino', icon: 'arduino/arduino-original' },
       { label: 'ESP32', simpleIcon: 'espressif' },
       { label: 'Node-RED', simpleIcon: 'nodered' },
-      { label: 'Godot', icon: 'godot/godot-original' },
     ],
   },
   {
-    name: 'Calidad y metodologías ágiles',
+    name: 'Videojuegos',
     techs: [
+      { label: 'Godot', icon: 'godot/godot-original' },
+      { label: 'C++ SFML', simpleIcon: 'sfml' },
+      { label: 'C/C++ raylib', simpleIcon: 'raylib' },
+    ],
+  },
+  {
+    name: 'Colaboración y metodologías ágiles',
+    techs: [
+      { label: 'Scrum', sprite: 'board' },
+      { label: 'Jira', icon: 'jira/jira-original' },
+      { label: 'GitHub Projects', icon: 'github/github-original' },
+      { label: 'Slack', icon: 'slack/slack-original' },
+    ],
+  },
+  {
+    name: 'Control de versiones y pruebas',
+    techs: [
+      { label: 'Git', icon: 'git/git-original' },
+      { label: 'GitHub', icon: 'github/github-original' },
+      { label: 'Bitbucket', icon: 'bitbucket/bitbucket-original' },
       { label: 'Vitest', icon: 'vitest/vitest-original' },
       { label: 'Jest', icon: 'jest/jest-plain' },
-      { label: 'Scrum', sprite: 'board' },
     ],
   },
 ];

@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PixelSprite } from './pixel/pixel-sprite';
 import { ProjectCard } from './project-card/project-card';
+import { S3Demo } from './s3-demo/s3-demo';
 import { LIKES, PROJECTS, TECH_GROUPS } from './portfolio.data';
 
 @Component({
-  imports: [PixelSprite, ProjectCard],
+  imports: [PixelSprite, ProjectCard, S3Demo],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

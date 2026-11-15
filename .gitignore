@@ -42,3 +42,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Material local (maquetas, entrega del curso, config de herramientas)
+/design
+/entrega
+/.impeccable
