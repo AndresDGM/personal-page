@@ -59,6 +59,17 @@ nav {
   padding: 16px 0;
   font: 500 14px var(--font-body);
 
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+
+    img {
+      image-rendering: pixelated;
+    }
+  }
+
   b {
     font-weight: 700;
     font-size: 18px;
