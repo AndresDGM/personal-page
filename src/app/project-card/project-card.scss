@@ -46,22 +46,27 @@ p {
   padding-top: 4px;
 }
 
+/* botones con borde pixel de 2px: el color del borde sale de --edge */
 .demo,
 .repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px;
   padding: 6px 12px;
   font: 500 14px var(--font-body);
   text-decoration: none;
+  box-shadow:
+    0 -2px 0 0 var(--edge),
+    0 2px 0 0 var(--edge),
+    -2px 0 0 0 var(--edge),
+    2px 0 0 0 var(--edge);
 }
 
 .demo {
-  margin: 2px;
+  --edge: var(--blue-deep);
   background: var(--cloud-mist);
   color: var(--blue-deep);
-  box-shadow:
-    0 -2px 0 0 var(--blue-deep),
-    0 2px 0 0 var(--blue-deep),
-    -2px 0 0 0 var(--blue-deep),
-    2px 0 0 0 var(--blue-deep);
 
   &:hover {
     background: var(--signal-blue);
@@ -69,9 +74,14 @@ p {
   }
 }
 
-.repo:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--signal-blue);
+.repo {
+  --edge: #000;
+  background: #181717;
+  color: #fff;
+
+  &:hover {
+    background: #3a3a3a;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
