@@ -1,0 +1,84 @@
+<div class="wrap">
+  <nav>
+    <b>aguevaradev</b>
+    <div class="links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#tecnologias">Tecnologías</a>
+      <a href="https://github.com/AndresDGM">GitHub</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <app-pixel-sprite class="cloud" name="cloud" [scale]="7" style="left: 2%; top: 24px" />
+    <app-pixel-sprite class="cloud" name="cloud" [scale]="5" style="right: 4%; top: 120px" />
+    <img class="photo" src="foto.jpg" alt="Foto de Andrés Guevara" width="360" height="360" />
+    <div>
+      <div class="hud" aria-label="Resumen">
+        <span>PROYECTOS <b>{{ pad(projects.length) }}</b></span>
+        <span>TECNOLOGÍAS <b>{{ pad(techCount) }}</b></span>
+        <span>UCEVA <b>★</b></span>
+      </div>
+      <h1>Andrés Guevara.<span>Mantengo servidores vivos.</span></h1>
+      <p>
+        Estudiante de Ingeniería de Sistemas en la UCEVA. Me gustan el DevOps, el backend y los
+        videojuegos, y practico enseñando lo que voy aprendiendo.
+      </p>
+      <a class="btn" href="#proyectos">Ver proyectos →</a>
+    </div>
+  </header>
+
+  <section class="sec" id="perfil" aria-labelledby="t-perfil">
+    <h2 id="t-perfil">Lo que me gusta</h2>
+    <p class="lead">Lo que más disfruto hacer, dentro y fuera de clase.</p>
+    <ul class="likes">
+      @for (like of likes; track like.title) {
+        <li class="panel">
+          <app-pixel-sprite [name]="like.sprite" />
+          <b>{{ like.title }}</b>
+          <span>{{ like.text }}</span>
+        </li>
+      }
+    </ul>
+  </section>
+
+  <section class="sec" id="tecnologias" aria-labelledby="t-tec">
+    <h2 id="t-tec">Tecnologías</h2>
+    <p class="lead">Con lo que he trabajado en estos proyectos.</p>
+    <div class="tech-groups">
+      @for (group of techGroups; track group.name) {
+        <div class="panel">
+          <h3>{{ group.name }}</h3>
+          <ul class="techs">
+            @for (tech of group.techs; track tech.label) {
+              <li>
+                @if (tech.icon) {
+                  <img [src]="deviconUrl + tech.icon + '.svg'" alt="" width="40" height="40" loading="lazy" />
+                } @else if (tech.simpleIcon) {
+                  <img [src]="simpleIconsUrl + tech.simpleIcon + '.svg'" alt="" width="40" height="40" loading="lazy" />
+                } @else if (tech.sprite) {
+                  <app-pixel-sprite class="tile" [name]="tech.sprite" />
+                }
+                {{ tech.label }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="sec" id="proyectos" aria-labelledby="t-proy">
+    <h2 id="t-proy">Proyectos</h2>
+    <p class="lead">Cada uno con su repositorio y su aplicación desplegada.</p>
+    <div class="cards">
+      @for (project of projects; track project.name) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Andrés Guevara · hecho con píxeles azules</div>
+</footer>

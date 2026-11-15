@@ -1,0 +1,94 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 4px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: var(--px-border), var(--px-drop);
+  transition:
+    transform 0.16s steps(2),
+    box-shadow 0.16s steps(2);
+}
+
+:host(:hover),
+:host(:focus-within) {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--px-border), var(--px-drop-hover);
+}
+
+.icon {
+  display: flex;
+  align-items: flex-end;
+  height: 90px;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+h3 {
+  font: 400 36px/1.11 var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--slate-pencil);
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+/* botones con borde pixel de 2px: el color del borde sale de --edge */
+.demo,
+.repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px;
+  padding: 6px 12px;
+  font: 500 14px var(--font-body);
+  text-decoration: none;
+  box-shadow:
+    0 -2px 0 0 var(--edge),
+    0 2px 0 0 var(--edge),
+    -2px 0 0 0 var(--edge),
+    2px 0 0 0 var(--edge);
+}
+
+.demo {
+  --edge: var(--blue-deep);
+  background: var(--cloud-mist);
+  color: var(--blue-deep);
+
+  &:hover {
+    background: var(--signal-blue);
+    color: #fff;
+  }
+}
+
+.repo {
+  --edge: #000;
+  background: #181717;
+  color: #fff;
+
+  &:hover {
+    background: #3a3a3a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host,
+  :host(:hover),
+  :host(:focus-within) {
+    transition: none;
+    transform: none;
+  }
+}
