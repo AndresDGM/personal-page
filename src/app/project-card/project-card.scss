@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 4px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: var(--px-border), var(--px-drop);
+  transition:
+    transform 0.16s steps(2),
+    box-shadow 0.16s steps(2);
+}
+
+:host(:hover),
+:host(:focus-within) {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--px-border), var(--px-drop-hover);
+}
+
+.icon {
+  display: flex;
+  align-items: flex-end;
+  height: 90px;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+h3 {
+  font: 400 36px/1.11 var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--slate-pencil);
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.demo,
+.repo {
+  padding: 6px 12px;
+  font: 500 14px var(--font-body);
+  text-decoration: none;
+}
+
+.demo {
+  margin: 2px;
+  background: var(--cloud-mist);
+  color: var(--blue-deep);
+  box-shadow:
+    0 -2px 0 0 var(--blue-deep),
+    0 2px 0 0 var(--blue-deep),
+    -2px 0 0 0 var(--blue-deep),
+    2px 0 0 0 var(--blue-deep);
+
+  &:hover {
+    background: var(--signal-blue);
+    color: #fff;
+  }
+}
+
+.repo:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--signal-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host,
+  :host(:hover),
+  :host(:focus-within) {
+    transition: none;
+    transform: none;
+  }
+}

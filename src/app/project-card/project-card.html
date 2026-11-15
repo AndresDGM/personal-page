@@ -1,0 +1,16 @@
+@let p = project();
+<div class="icon"><canvas #canvas aria-hidden="true"></canvas></div>
+<h3>{{ p.name }}</h3>
+<p>{{ p.description }}</p>
+<div class="chips">
+  @for (tech of p.stack; track tech) {
+    <span class="chip">{{ tech }}</span>
+  }
+</div>
+@if (p.manualDeploy) {
+  <div class="chips"><span class="chip warn">Despliegue manual · Actions pendiente</span></div>
+}
+<div class="actions">
+  <a class="demo" [href]="p.demoUrl" target="_blank" rel="noopener">Ver demo →</a>
+  <a class="repo" [href]="p.repoUrl" target="_blank" rel="noopener">Código</a>
+</div>
