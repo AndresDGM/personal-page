@@ -41,6 +41,18 @@ export const SPRITES = {
     '.KBBBBBBBBK.',
     '..KKKKKKKK..',
   ],
+  trophy: [
+    '..KKKKKKKK..',
+    'KKKYWYYYOKKK',
+    'K.KYYYYYOK.K',
+    '.KKYYYYYOKK.',
+    '...KYYYOK...',
+    '....KYOK....',
+    '....KYOK....',
+    '...KKKKKK...',
+    '..KDDDDDDK..',
+    '..KKKKKKKK..',
+  ],
   cap: ['....KKKK....', '..KKBBBBKK..', 'KKBBBBBBBBKK', '.KKKBBBBKKK.', '...KBBBBK...', '...KKKKKK...'],
 } satisfies Record<string, Grid>;
 

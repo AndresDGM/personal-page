@@ -37,6 +37,11 @@ export const LIKES: Like[] = [
   { title: 'DevOps', text: 'Mantener y administrar servidores.', sprite: 'server' },
   { title: 'Backend', text: 'APIs, datos y lógica de servidor.', sprite: 'terminal' },
   { title: 'Videojuegos', text: 'Desarrollarlos, no solo jugarlos.', sprite: 'gamepad' },
+  {
+    title: 'Programación competitiva',
+    text: 'Maratones de programación; mi trabajo de grado es un juez en línea para ellas.',
+    sprite: 'trophy',
+  },
   { title: 'Enseñar', text: 'Explicar lo que aprendo; sigo practicando.', sprite: 'cap' },
 ];
 
