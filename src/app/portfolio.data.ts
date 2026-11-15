@@ -91,13 +91,12 @@ export const PROJECTS: Project[] = [
     name: 'MiPQR',
     description:
       'Plataforma web para registrar, asignar y seguir peticiones, quejas y reclamos con un código único de seguimiento. Caso piloto: Clínica Dolormed.',
-    stack: ['Angular', 'Node.js', 'Express', 'TypeScript'],
-    demoUrl: 'https://mipqr.aguevaradev.me/',
+    stack: ['Angular', 'Node.js', 'Express', 'TypeScript', 'GitHub Actions'],
+    demoUrl: 'https://aguevaradev.me/MiPQR/',
     repoUrl: 'https://github.com/AndresDGM/MiPQR',
     animation: 'mipqr',
     scale: 7,
     frameMs: 380,
-    manualDeploy: true,
   },
   {
     name: 'Storage Manager',
