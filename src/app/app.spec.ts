@@ -44,9 +44,9 @@ describe('App', () => {
     expect(hud).toContain(`TECNOLOGÍAS ${String(techs).padStart(2, '0')}`);
   });
 
-  it('cada tecnología tiene logo o placa, nunca un hueco', () => {
+  it('cada tecnología tiene exactamente un icono, nunca un hueco', () => {
     for (const tech of TECH_GROUPS.flatMap((g) => g.techs)) {
-      expect(!!tech.icon !== !!tech.badge).toBe(true);
+      expect([tech.icon, tech.simpleIcon, tech.sprite].filter(Boolean).length).toBe(1);
     }
   });
 });

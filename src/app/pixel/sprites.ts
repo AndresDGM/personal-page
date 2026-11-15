@@ -17,6 +17,7 @@ export const PALETTE: Readonly<Record<string, string>> = {
   A: '#c3cbd6',
   O: '#ffb020',
   Y: '#ffe066',
+  U: '#b7410e', // óxido (RustFS)
   X: '#121212', // negro del logo de Goslint
   E: '#00bf63', // verde del logo de Goslint
 };
@@ -41,6 +42,46 @@ export const SPRITES = {
     '.KBBBBBBBBK.',
     '..KKKKKKKK..',
   ],
+  // Iconos de tecnologías sin logo oficial: dibujos que representan lo que hacen.
+  /** WebSocket: canal bidireccional. */
+  websocket: [
+    '......B...',
+    '......BB..',
+    '.BBBBBBBB.',
+    '......BB..',
+    '......B...',
+    '...D......',
+    '..DD......',
+    '.DDDDDDDD.',
+    '..DD......',
+    '...D......',
+  ],
+  /** SSE: el servidor emite un flujo hacia el cliente. */
+  sse: ['KKKK......', 'KLGK...B..', 'KKKK...BB.', 'KLGKB.BBBB', 'KKKK...BB.', 'KLGK...B..', 'KKKK......'],
+  /** RustFS: almacenamiento de objetos (un bucket) color óxido. */
+  bucket: [
+    '.KKKKKKKK.',
+    'KOOOOOOOOK',
+    '.KKKKKKKK.',
+    '.KUUUUUUK.',
+    '.KUOUUUUK.',
+    '..KUUUUK..',
+    '..KUUUUK..',
+    '..KKKKKK..',
+  ],
+  /** Scrum: tablero con tareas por hacer, en curso y hechas. */
+  board: [
+    'KKKKKKKKKK',
+    'KYYKLLKGGK',
+    'K..K..K..K',
+    'KYYK..KGGK',
+    'K..KLLK..K',
+    'KYYK..KGGK',
+    'K..K..K..K',
+    'KKKKKKKKKK',
+  ],
+  /** IoT: señal inalámbrica. */
+  wifi: ['..BBBBBB..', '.B......B.', 'B..BBBB..B', '..B....B..', '....BB....', '....BB....'],
   trophy: [
     '..KKKKKKKK..',
     'KKKYWYYYOKKK',

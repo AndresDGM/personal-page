@@ -314,14 +314,15 @@ nav {
       transform: translateY(-4px);
     }
 
-    &:hover img {
+    &:hover img,
+    &:hover .tile {
       background: #fff;
       box-shadow: 0 0 0 2px var(--signal-blue);
     }
   }
 
   img,
-  .badge {
+  .tile {
     box-sizing: content-box;
     width: 40px;
     height: 40px;
@@ -329,14 +330,10 @@ nav {
     background: var(--cloud-mist);
   }
 
-  /* placa pixel para tecnologías sin logo en Devicon */
-  .badge {
+  /* icono pixel propio, centrado en la misma baldosa que los logos */
+  .tile {
     display: grid;
     place-items: center;
-    background: var(--deep-navy);
-    color: #fff;
-    font: 400 18px/1 var(--font-display);
-    letter-spacing: 0.04em;
   }
 }
 

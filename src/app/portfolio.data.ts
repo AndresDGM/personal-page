@@ -20,12 +20,15 @@ export interface Like {
   sprite: SpriteName;
 }
 
+/** Cada tecnología lleva exactamente una de las tres fuentes de icono. */
 export interface Tech {
   label: string;
   /** Ruta dentro de Devicon (sin la extensión .svg). */
   icon?: string;
-  /** Texto corto para la placa pixel cuando Devicon no tiene el logo. */
-  badge?: string;
+  /** Slug de Simple Icons, para logos que Devicon no tiene. */
+  simpleIcon?: string;
+  /** Icono pixel propio cuando la tecnología no tiene logo oficial. */
+  sprite?: SpriteName;
 }
 
 export interface TechGroup {
@@ -70,8 +73,9 @@ export const TECH_GROUPS: TechGroup[] = [
   {
     name: 'Tiempo real y mensajería',
     techs: [
-      { label: 'WebSocket', badge: 'WS' },
-      { label: 'SSE', badge: 'SSE' },
+      { label: 'WebSocket', sprite: 'websocket' },
+      { label: 'SSE', sprite: 'sse' },
+      { label: 'MQTT', simpleIcon: 'mqtt' },
       { label: 'RabbitMQ', icon: 'rabbitmq/rabbitmq-original' },
     ],
   },
@@ -82,13 +86,13 @@ export const TECH_GROUPS: TechGroup[] = [
       { label: 'Redis', icon: 'redis/redis-original' },
       { label: 'AWS S3', icon: 'amazonwebservices/amazonwebservices-original-wordmark' },
       { label: 'Supabase Storage', icon: 'supabase/supabase-original' },
-      { label: 'RustFS', badge: 'RFS' },
+      { label: 'RustFS', sprite: 'bucket' },
     ],
   },
   {
     name: 'Infraestructura y DevOps',
     techs: [
-      { label: 'VPS', badge: 'VPS' },
+      { label: 'VPS', sprite: 'server' },
       { label: 'OCI', icon: 'oracle/oracle-original' },
       { label: 'Railway', icon: 'railway/railway-original' },
       { label: 'Docker', icon: 'docker/docker-original' },
@@ -97,11 +101,13 @@ export const TECH_GROUPS: TechGroup[] = [
     ],
   },
   {
-    name: 'Videojuegos y hardware',
+    name: 'IoT, hardware y videojuegos',
     techs: [
-      { label: 'Godot', icon: 'godot/godot-original' },
+      { label: 'IoT', sprite: 'wifi' },
       { label: 'Arduino', icon: 'arduino/arduino-original' },
-      { label: 'ESP32', badge: 'ESP32' },
+      { label: 'ESP32', simpleIcon: 'espressif' },
+      { label: 'Node-RED', simpleIcon: 'nodered' },
+      { label: 'Godot', icon: 'godot/godot-original' },
     ],
   },
   {
@@ -109,7 +115,7 @@ export const TECH_GROUPS: TechGroup[] = [
     techs: [
       { label: 'Vitest', icon: 'vitest/vitest-original' },
       { label: 'Jest', icon: 'jest/jest-plain' },
-      { label: 'Scrum', badge: 'SCRUM' },
+      { label: 'Scrum', sprite: 'board' },
     ],
   },
 ];

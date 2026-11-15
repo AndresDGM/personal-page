@@ -54,8 +54,10 @@
               <li>
                 @if (tech.icon) {
                   <img [src]="deviconUrl + tech.icon + '.svg'" alt="" width="40" height="40" loading="lazy" />
-                } @else {
-                  <span class="badge" aria-hidden="true">{{ tech.badge }}</span>
+                } @else if (tech.simpleIcon) {
+                  <img [src]="simpleIconsUrl + tech.simpleIcon + '.svg'" alt="" width="40" height="40" loading="lazy" />
+                } @else if (tech.sprite) {
+                  <app-pixel-sprite class="tile" [name]="tech.sprite" />
                 }
                 {{ tech.label }}
               </li>
